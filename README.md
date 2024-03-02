@@ -24,7 +24,7 @@ Cosa  e come consegnare?
 Dopo aver testato le vostre query con phpMyAdmin, riportatele in un file .sql e caricatelo nella vostra repo.
 Sarebbe consigliabile effettuare un push ad ogni query completata.
 
-
+### Query with SELECT
 <!-- 1. Selezionare tutti gli studenti nati nel 1990 (160) -->
 SELECT * FROM `students` WHERE YEAR(`date_of_birth`) = 1990;
 
@@ -48,3 +48,16 @@ SELECT * FROM `departments`;
 
 <!-- 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50) -->
 SELECT * FROM `teachers` WHERE `phone` IS NULL;
+
+---
+
+### Query with GROUPBY
+
+<!-- 1. Contare quanti iscritti ci sono stati ogni anno -->
+SELECT COUNT(`id`),YEAR(`enrolment_date`) FROM `students` GROUP BY YEAR(`enrolment_date`);
+
+<!-- 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio -->
+
+<!-- 3. Calcolare la media dei voti di ogni appello d'esame -->
+
+<!-- 4. Contare quanti corsi di laurea ci sono per ogni dipartimento -->
