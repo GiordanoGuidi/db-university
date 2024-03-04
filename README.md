@@ -84,6 +84,13 @@ ON `departments`.`id`=`degrees`.`department_id`
 WHERE `departments`.`name`= 'Dipartimento di Neuroscienze';
 
 <!-- 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44) -->
+SELECT C.`name` AS`nome_corso`, C.`description` AS`descrizione_corso`,C.`period`
+AS`semestre`, C.`year` AS`anno`, T.`name` AS`nome_prof`, T.`surname`AS`cognome_prof`
+FROM `courses` AS C
+JOIN `course_teacher` AS CT ON C.`id`= CT.`course_id`
+JOIN `teachers` AS T ON T.`id`= CT.`teacher_id`
+WHERE T.`name`='Fulvio'
+AND T.`surname`='Amato';
 
 <!-- 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il -->
 
